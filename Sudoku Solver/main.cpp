@@ -7,10 +7,11 @@
 #include <iomanip>
 
 using namespace std;
+
 int printMap(vector<vector<int>>sudokuMapGrid) {
-	for(int column =0; column < sudokuMapGrid.size();column++)
+	for(unsigned int column =0; column < sudokuMapGrid.size();column++)
 	{ 
-		for (int row = 0; row < sudokuMapGrid[column].size();row++) {
+		for (unsigned int row = 0; row < sudokuMapGrid[column].size();row++) {
 			
 			cout << sudokuMapGrid[column][row] << " ";
 			if (row == 2 || row == 5) cout << "|";
@@ -40,11 +41,10 @@ int main(int argc, char argv[]) {
 			sudokuGrid.push_back(row);
 
 		}
-		SolverManager sudokuSolver;
+		printMap(sudokuGrid);
+		SolverManager sudokuSolver(sudokuGrid);
 		vector<vector<int>> solvedSudokuGrid;
-
-
-		solvedSudokuGrid = sudokuSolver.SolveSudokuMap(sudokuGrid);
+		solvedSudokuGrid = sudokuSolver.SolveSudokuMap();
 		printMap(solvedSudokuGrid);
 
 	}
