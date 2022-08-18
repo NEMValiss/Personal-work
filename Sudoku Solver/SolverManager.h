@@ -31,8 +31,9 @@ private:
 	std::vector<SolvingMethods>  solvingMethods = {
 
 		//Enter the SudokuSolverMethod here in the format of &SudokuSolverMethods::METHODNAME add comas where needed.
-		&SudokuSolverMethods::eliminateLikeValues,
-		&SudokuSolverMethods::lastPossibleValue
+		&SudokuSolverMethods::lastPossibleValue,
+		&SudokuSolverMethods::eliminateLikeValues
+		
 	};
 	
 };
